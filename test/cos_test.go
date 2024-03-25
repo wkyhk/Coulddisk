@@ -15,15 +15,15 @@ import (
 func TestFileUploadByFilePath(t *testing.T) {
 	// 存储桶名称，由 bucketname-appid 组成，appid 必须填入，可以在 COS 控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
 	// 替换为用户的 region，存储桶 region 可以在 COS 控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
-	u, _ := url.Parse("https://disk-1316937931.cos.ap-nanjing.myqcloud.com")
+	u, _ := url.Parse("  ")
 	b := &cos.BaseURL{BucketURL: u}
 	client := cos.NewClient(b, &http.Client{
 		Transport: &cos.AuthorizationTransport{
 			// 通过环境变量获取密钥
 			// 环境变量 SECRETID 表示用户的 SecretId，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
-			SecretID: "AKIDmNmvoRowpSpxqHVXTA6wgCUWI9pHiz85", // 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://cloud.tencent.com/document/product/598/37140
+			SecretID: "", // 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://cloud.tencent.com/document/product/598/37140
 			// 环境变量 SECRETKEY 表示用户的 SecretKey，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
-			SecretKey: "nkcmjSxBAuMfkY7lANXUDgtrYyCE0X5L", // 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://cloud.tencent.com/document/product/598/37140
+			SecretKey: "", // 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://cloud.tencent.com/document/product/598/37140
 		},
 	})
 
@@ -37,15 +37,15 @@ func TestFileUploadByFilePath(t *testing.T) {
 	}
 }
 func TestFileUploadByReader(t *testing.T) {
-	u, _ := url.Parse("https://disk-1316937931.cos.ap-nanjing.myqcloud.com")
+	u, _ := url.Parse("  ")
 	b := &cos.BaseURL{BucketURL: u}
 	client := cos.NewClient(b, &http.Client{
 		Transport: &cos.AuthorizationTransport{
 			// 通过环境变量获取密钥
 			// 环境变量 SECRETID 表示用户的 SecretId，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
-			SecretID: "AKIDmNmvoRowpSpxqHVXTA6wgCUWI9pHiz85", // 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://cloud.tencent.com/document/product/598/37140
+			SecretID: "", // 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://cloud.tencent.com/document/product/598/37140
 			// 环境变量 SECRETKEY 表示用户的 SecretKey，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
-			SecretKey: "nkcmjSxBAuMfkY7lANXUDgtrYyCE0X5L", // 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://cloud.tencent.com/document/product/598/37140
+			SecretKey: "", // 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://cloud.tencent.com/document/product/598/37140
 		},
 	})
 
@@ -64,12 +64,12 @@ func TestFileUploadByReader(t *testing.T) {
 
 // 分片上传初始化
 func TestInitPartUpload(t *testing.T) {
-	u, _ := url.Parse("https://disk-1316937931.cos.ap-nanjing.myqcloud.com")
+	u, _ := url.Parse("  ")
 	b := &cos.BaseURL{BucketURL: u}
 	client := cos.NewClient(b, &http.Client{
 		Transport: &cos.AuthorizationTransport{
-			SecretID:  "AKIDmNmvoRowpSpxqHVXTA6wgCUWI9pHiz85",
-			SecretKey: "nkcmjSxBAuMfkY7lANXUDgtrYyCE0X5L",
+			SecretID:  "",
+			SecretKey: "",
 		},
 	})
 	key := "cloud-disk/test.mp4"
@@ -84,12 +84,12 @@ func TestInitPartUpload(t *testing.T) {
 
 // 分片上传
 func TestPartUpload(t *testing.T) {
-	u, _ := url.Parse("https://disk-1316937931.cos.ap-nanjing.myqcloud.com")
+	u, _ := url.Parse("  ")
 	b := &cos.BaseURL{BucketURL: u}
 	client := cos.NewClient(b, &http.Client{
 		Transport: &cos.AuthorizationTransport{
-			SecretID:  "AKIDmNmvoRowpSpxqHVXTA6wgCUWI9pHiz85",
-			SecretKey: "nkcmjSxBAuMfkY7lANXUDgtrYyCE0X5L",
+			SecretID:  "",
+			SecretKey: "",
 		},
 	})
 
@@ -114,12 +114,12 @@ func TestPartUpload(t *testing.T) {
 
 // 分片上传完成
 func TestPartUploadComplete(t *testing.T) {
-	u, _ := url.Parse("https://disk-1316937931.cos.ap-nanjing.myqcloud.com")
+	u, _ := url.Parse("  ")
 	b := &cos.BaseURL{BucketURL: u}
 	client := cos.NewClient(b, &http.Client{
 		Transport: &cos.AuthorizationTransport{
-			SecretID:  "AKIDmNmvoRowpSpxqHVXTA6wgCUWI9pHiz85",
-			SecretKey: "nkcmjSxBAuMfkY7lANXUDgtrYyCE0X5L",
+			SecretID:  "",
+			SecretKey: "",
 		},
 	})
 	key := "cloud-disk/test.mp4"

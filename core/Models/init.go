@@ -14,7 +14,7 @@ func GetDB() *gorm.DB {
 	return _db
 }
 func initGorm() *gorm.DB {
-	db, err := gorm.Open(mysql.Open("whk:123456@tcp(192.168.118.132:3306)/cloud-disk?charset=utf8mb4&parseTime=True&loc=Local"),
+	db, err := gorm.Open(mysql.Open(""),
 		&gorm.Config{})
 	if err != nil {
 		log.Printf("gorm new db Error:%v", err)
