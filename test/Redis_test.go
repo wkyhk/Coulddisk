@@ -10,7 +10,7 @@ import (
 
 var ctx = context.Background()
 var rdb = redis.NewClient(&redis.Options{
-	Addr:     "192.168.137.100:6379",
+	Addr:     "",
 	Password: "", // no password set
 	DB:       0,  // use default DB
 })
